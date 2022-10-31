@@ -1,7 +1,7 @@
 package com.example.demo.converter;
 
 import com.example.demo.models.ToDoList;
-import com.example.demo.requestDto.SaveToToDoList;
+import com.example.demo.requestDto.SaveDtoToDo;
 import com.example.demo.responseDto.ToDoListResponseDto;
 import org.springframework.stereotype.Component;
 
@@ -11,7 +11,7 @@ import java.util.List;
 @Component
 public class ToDoConverter {
 
-    public ToDoList convertToDoDtoToDo(SaveToToDoList saveToToDoList){
+    public ToDoList convertToDoDtoToDo(SaveDtoToDo saveToToDoList){
         ToDoList todo=new ToDoList();
         todo.setName(saveToToDoList.getToDo());
         return todo;

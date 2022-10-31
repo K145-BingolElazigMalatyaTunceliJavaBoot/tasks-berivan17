@@ -1,8 +1,21 @@
 package com.example.demo.models;
+import javax.persistence.*;
 
+import lombok.Data;
+
+@Entity
+@Table(name= "TO_DO_LIST")
+@Data
 public class ToDoList {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @Column
     private String name;
+
+    @Column
     private boolean done;
 
     public ToDoList(){

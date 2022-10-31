@@ -1,13 +1,13 @@
 package com.example.demo.responseDto;
 
 public class ToDoListResponseDto {
-    private String ToDo;
+    private String ToDoResponseDto;
 
     public String getToDo() {
-        return ToDo;
+        return ToDoResponseDto;
     }
 
-    public void setToDo(String ToDo) {
-        this.ToDo = ToDo;
+    public void setToDo(String ToDoResponseDto) {
+        this.ToDoResponseDto = ToDoResponseDto;
     }
 }

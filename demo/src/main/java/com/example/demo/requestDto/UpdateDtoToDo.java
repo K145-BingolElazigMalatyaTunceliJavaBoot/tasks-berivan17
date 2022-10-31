@@ -1,6 +1,6 @@
 package com.example.demo.requestDto;
 
-public class UpdateToDo {
+public class UpdateDtoToDo {
     private String ToDo;
     private int id;
 
@@ -20,4 +20,3 @@ public class UpdateToDo {
         this.id = id;
     }
 }
-

@@ -1,6 +1,6 @@
 package com.example.demo.requestDto;
 
-public class SaveToToDoList {
+public class SaveDtoToDo {
     private String ToDo;
 
     public String getToDo() {

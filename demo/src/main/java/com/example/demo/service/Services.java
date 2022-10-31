@@ -3,8 +3,8 @@ package com.example.demo.service;
 import com.example.demo.converter.ToDoConverter;
 import com.example.demo.models.ToDoList;
 import com.example.demo.repository.ListRepo;
-import com.example.demo.requestDto.SaveToToDoList;
-import com.example.demo.requestDto.UpdateToDo;
+import com.example.demo.requestDto.SaveDtoToDo;
+import com.example.demo.requestDto.UpdateDtoToDo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,15 +19,18 @@ public class Services {
     @Autowired
     ToDoConverter toDoConverter;
 
-    public String saveToDo(SaveToToDoList saveToToDoList){
-        ToDoList todo=toDoConverter.convertToDoDtoToDo(saveToToDoList);
+    @Autowired
+    ListRepo ListRepo;
+
+    public String saveToDo(SaveDtoToDo saveDtoToDo){
+        ToDoList todo=toDoConverter.convertToDoDtoToDo(saveDtoToDo);
         todo=listRepo.save(todo);
         return String.valueOf(todo.getId());
 
     }
-    public void updateToDo(UpdateToDo updateToDo) {
+    public void updateToDo(UpdateDtoToDo updateDtoToDo) {
 
-        int idToDoRequest = updateToDo.getId();
+        int idToDoRequest = updateDtoToDo.getId();
         List<ToDoList> todoOptinal = ListRepo.findById(idToDoRequest);
 
 
